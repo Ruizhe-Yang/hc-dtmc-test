@@ -1,0 +1,47 @@
+@namespace(uri="sag.org.eclipse.hc.dtmc",prefix="")
+package dtmc;
+
+class Module{
+	val Dtmc[*] dtmc;
+}
+
+class Dtmc{
+	attr String[*] name;
+	attr String[*] variable;
+	val State[*] states;
+	val Transition[*] transitions;
+	val Reward[*] rewards;
+	val Line[*] lines;
+}
+
+class State{
+	attr int name;
+	attr String label;
+	val Transition[*] transitions;
+}
+
+class Transition{
+	//attr String name;
+	attr double probability;		
+	ref State[*] to;
+}
+
+class Reward{
+	attr String name;
+	val Action[*] actions;
+	}
+	
+class Action{
+	attr String name;
+	attr double value;
+}
+
+class Line{
+	//attr String name;	
+	attr String name;	
+	ref State[*] source;
+	ref State[*] target;
+	//ref State[*] source;
+	
+}
+

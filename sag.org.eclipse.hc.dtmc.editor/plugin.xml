@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dtmc -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="sag.org.eclipse.hc.dtmc.presentation.DtmcModelWizardID"
+            name="%_UI_DtmcModelWizard_label"
+            class="sag.org.eclipse.hc.dtmc.presentation.DtmcModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DtmcModelFile.gif">
+         <description>%_UI_DtmcModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dtmc -->
+      <editor
+            id="sag.org.eclipse.hc.dtmc.presentation.DtmcEditorID"
+            name="%_UI_DtmcEditor_label"
+            icon="icons/full/obj16/DtmcModelFile.gif"
+            extensions="dtmc"
+            class="sag.org.eclipse.hc.dtmc.presentation.DtmcEditor"
+            contributorClass="sag.org.eclipse.hc.dtmc.presentation.DtmcActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
