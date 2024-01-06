@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link sag.org.eclipse.hc.dtmc.Dtmc#getVariable <em>Variable</em>}</li>
  *   <li>{@link sag.org.eclipse.hc.dtmc.Dtmc#getStates <em>States</em>}</li>
  *   <li>{@link sag.org.eclipse.hc.dtmc.Dtmc#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link sag.org.eclipse.hc.dtmc.Dtmc#getLines <em>Lines</em>}</li>
  *   <li>{@link sag.org.eclipse.hc.dtmc.Dtmc#getRewards <em>Rewards</em>}</li>
  * </ul>
  *
@@ -70,18 +69,6 @@ public interface Dtmc extends Base {
 	 * @generated
 	 */
 	EList<Transition> getTransitions();
-
-	/**
-	 * Returns the value of the '<em><b>Lines</b></em>' containment reference list.
-	 * The list contents are of type {@link sag.org.eclipse.hc.dtmc.Line}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lines</em>' containment reference list.
-	 * @see sag.org.eclipse.hc.dtmc.DtmcPackage#getDtmc_Lines()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Line> getLines();
 
 	/**
 	 * Returns the value of the '<em><b>Rewards</b></em>' containment reference list.

@@ -45,6 +45,7 @@ public class TransitionItemProvider extends BaseItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addProbabilityPropertyDescriptor(object);
+			addToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,6 +64,21 @@ public class TransitionItemProvider extends BaseItemProvider {
 								"_UI_Transition_type"),
 						DtmcPackage.Literals.TRANSITION__PROBABILITY, true, false, false,
 						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the To feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Transition_to_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Transition_to_feature",
+								"_UI_Transition_type"),
+						DtmcPackage.Literals.TRANSITION__TO, true, false, true, null, null, null));
 	}
 
 	/**

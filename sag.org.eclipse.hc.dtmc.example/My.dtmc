@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtmc:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dtmc="http://sag.org.eclipse.hc/dtmc">
+  <dtmc>
+    <states name="1">
+      <transitions name="11" to="//@dtmc.0/@states.0"/>
+      <transitions name="12" to="//@dtmc.0/@states.1"/>
+      <transitions name="13" to="//@dtmc.0/@states.2"/>
+    </states>
+    <states name="2">
+      <transitions name="21" to="//@dtmc.0/@states.0"/>
+    </states>
+    <states name="3">
+      <transitions name="31" to="//@dtmc.0/@states.0"/>
+    </states>
+    <states name="4">
+      <transitions name="45" to="//@dtmc.0/@states.4"/>
+      <transitions name="42" to="//@dtmc.0/@states.1"/>
+    </states>
+    <states name="5">
+      <transitions/>
+    </states>
+  </dtmc>
+</dtmc:Module>

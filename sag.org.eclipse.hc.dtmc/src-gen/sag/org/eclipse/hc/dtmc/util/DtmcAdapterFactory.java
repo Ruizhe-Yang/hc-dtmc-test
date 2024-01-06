@@ -13,7 +13,6 @@ import sag.org.eclipse.hc.dtmc.Action;
 import sag.org.eclipse.hc.dtmc.Base;
 import sag.org.eclipse.hc.dtmc.Dtmc;
 import sag.org.eclipse.hc.dtmc.DtmcPackage;
-import sag.org.eclipse.hc.dtmc.Line;
 import sag.org.eclipse.hc.dtmc.Reward;
 import sag.org.eclipse.hc.dtmc.State;
 import sag.org.eclipse.hc.dtmc.Transition;
@@ -101,11 +100,6 @@ public class DtmcAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAction(Action object) {
 			return createActionAdapter();
-		}
-
-		@Override
-		public Adapter caseLine(Line object) {
-			return createLineAdapter();
 		}
 
 		@Override
@@ -213,20 +207,6 @@ public class DtmcAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link sag.org.eclipse.hc.dtmc.Line <em>Line</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see sag.org.eclipse.hc.dtmc.Line
-	 * @generated
-	 */
-	public Adapter createLineAdapter() {
 		return null;
 	}
 

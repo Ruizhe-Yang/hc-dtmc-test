@@ -11,7 +11,6 @@ import sag.org.eclipse.hc.dtmc.Action;
 import sag.org.eclipse.hc.dtmc.Base;
 import sag.org.eclipse.hc.dtmc.Dtmc;
 import sag.org.eclipse.hc.dtmc.DtmcPackage;
-import sag.org.eclipse.hc.dtmc.Line;
 import sag.org.eclipse.hc.dtmc.Reward;
 import sag.org.eclipse.hc.dtmc.State;
 import sag.org.eclipse.hc.dtmc.Transition;
@@ -125,15 +124,6 @@ public class DtmcSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DtmcPackage.LINE: {
-			Line line = (Line) theEObject;
-			T result = caseLine(line);
-			if (result == null)
-				result = caseBase(line);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case DtmcPackage.MODULE: {
 			sag.org.eclipse.hc.dtmc.Module module = (sag.org.eclipse.hc.dtmc.Module) theEObject;
 			T result = caseModule(module);
@@ -235,21 +225,6 @@ public class DtmcSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAction(Action object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Line</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Line</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLine(Line object) {
 		return null;
 	}
 

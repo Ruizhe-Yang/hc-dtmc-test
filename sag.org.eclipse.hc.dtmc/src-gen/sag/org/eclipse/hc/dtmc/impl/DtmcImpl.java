@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import sag.org.eclipse.hc.dtmc.Dtmc;
 import sag.org.eclipse.hc.dtmc.DtmcPackage;
-import sag.org.eclipse.hc.dtmc.Line;
 import sag.org.eclipse.hc.dtmc.Reward;
 import sag.org.eclipse.hc.dtmc.State;
 import sag.org.eclipse.hc.dtmc.Transition;
@@ -35,7 +34,6 @@ import sag.org.eclipse.hc.dtmc.Transition;
  *   <li>{@link sag.org.eclipse.hc.dtmc.impl.DtmcImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link sag.org.eclipse.hc.dtmc.impl.DtmcImpl#getStates <em>States</em>}</li>
  *   <li>{@link sag.org.eclipse.hc.dtmc.impl.DtmcImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link sag.org.eclipse.hc.dtmc.impl.DtmcImpl#getLines <em>Lines</em>}</li>
  *   <li>{@link sag.org.eclipse.hc.dtmc.impl.DtmcImpl#getRewards <em>Rewards</em>}</li>
  * </ul>
  *
@@ -81,16 +79,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 	 * @ordered
 	 */
 	protected EList<Transition> transitions;
-
-	/**
-	 * The cached value of the '{@link #getLines() <em>Lines</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLines()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Line> lines;
 
 	/**
 	 * The cached value of the '{@link #getRewards() <em>Rewards</em>}' containment reference list.
@@ -172,18 +160,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Line> getLines() {
-		if (lines == null) {
-			lines = new EObjectContainmentEList<Line>(Line.class, this, DtmcPackage.DTMC__LINES);
-		}
-		return lines;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Reward> getRewards() {
 		if (rewards == null) {
 			rewards = new EObjectContainmentEList<Reward>(Reward.class, this, DtmcPackage.DTMC__REWARDS);
@@ -203,8 +179,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 			return ((InternalEList<?>) getStates()).basicRemove(otherEnd, msgs);
 		case DtmcPackage.DTMC__TRANSITIONS:
 			return ((InternalEList<?>) getTransitions()).basicRemove(otherEnd, msgs);
-		case DtmcPackage.DTMC__LINES:
-			return ((InternalEList<?>) getLines()).basicRemove(otherEnd, msgs);
 		case DtmcPackage.DTMC__REWARDS:
 			return ((InternalEList<?>) getRewards()).basicRemove(otherEnd, msgs);
 		}
@@ -225,8 +199,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 			return getStates();
 		case DtmcPackage.DTMC__TRANSITIONS:
 			return getTransitions();
-		case DtmcPackage.DTMC__LINES:
-			return getLines();
 		case DtmcPackage.DTMC__REWARDS:
 			return getRewards();
 		}
@@ -253,10 +225,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 			getTransitions().clear();
 			getTransitions().addAll((Collection<? extends Transition>) newValue);
 			return;
-		case DtmcPackage.DTMC__LINES:
-			getLines().clear();
-			getLines().addAll((Collection<? extends Line>) newValue);
-			return;
 		case DtmcPackage.DTMC__REWARDS:
 			getRewards().clear();
 			getRewards().addAll((Collection<? extends Reward>) newValue);
@@ -282,9 +250,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 		case DtmcPackage.DTMC__TRANSITIONS:
 			getTransitions().clear();
 			return;
-		case DtmcPackage.DTMC__LINES:
-			getLines().clear();
-			return;
 		case DtmcPackage.DTMC__REWARDS:
 			getRewards().clear();
 			return;
@@ -306,8 +271,6 @@ public class DtmcImpl extends BaseImpl implements Dtmc {
 			return states != null && !states.isEmpty();
 		case DtmcPackage.DTMC__TRANSITIONS:
 			return transitions != null && !transitions.isEmpty();
-		case DtmcPackage.DTMC__LINES:
-			return lines != null && !lines.isEmpty();
 		case DtmcPackage.DTMC__REWARDS:
 			return rewards != null && !rewards.isEmpty();
 		}

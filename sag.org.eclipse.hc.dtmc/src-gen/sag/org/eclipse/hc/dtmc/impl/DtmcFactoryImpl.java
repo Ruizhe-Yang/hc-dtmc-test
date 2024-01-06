@@ -14,7 +14,6 @@ import sag.org.eclipse.hc.dtmc.Action;
 import sag.org.eclipse.hc.dtmc.Dtmc;
 import sag.org.eclipse.hc.dtmc.DtmcFactory;
 import sag.org.eclipse.hc.dtmc.DtmcPackage;
-import sag.org.eclipse.hc.dtmc.Line;
 import sag.org.eclipse.hc.dtmc.Reward;
 import sag.org.eclipse.hc.dtmc.State;
 import sag.org.eclipse.hc.dtmc.Transition;
@@ -72,8 +71,6 @@ public class DtmcFactoryImpl extends EFactoryImpl implements DtmcFactory {
 			return createReward();
 		case DtmcPackage.ACTION:
 			return createAction();
-		case DtmcPackage.LINE:
-			return createLine();
 		case DtmcPackage.MODULE:
 			return createModule();
 		default:
@@ -129,16 +126,6 @@ public class DtmcFactoryImpl extends EFactoryImpl implements DtmcFactory {
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Line createLine() {
-		LineImpl line = new LineImpl();
-		return line;
 	}
 
 	/**

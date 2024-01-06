@@ -188,29 +188,6 @@ public class DtmcItemProviderAdapterFactory extends DtmcAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link sag.org.eclipse.hc.dtmc.Line} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LineItemProvider lineItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link sag.org.eclipse.hc.dtmc.Line}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLineAdapter() {
-		if (lineItemProvider == null) {
-			lineItemProvider = new LineItemProvider(this);
-		}
-
-		return lineItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link sag.org.eclipse.hc.dtmc.Module} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -342,8 +319,6 @@ public class DtmcItemProviderAdapterFactory extends DtmcAdapterFactory
 			rewardItemProvider.dispose();
 		if (actionItemProvider != null)
 			actionItemProvider.dispose();
-		if (lineItemProvider != null)
-			lineItemProvider.dispose();
 		if (moduleItemProvider != null)
 			moduleItemProvider.dispose();
 	}

@@ -14,7 +14,6 @@ import sag.org.eclipse.hc.dtmc.Base;
 import sag.org.eclipse.hc.dtmc.Dtmc;
 import sag.org.eclipse.hc.dtmc.DtmcFactory;
 import sag.org.eclipse.hc.dtmc.DtmcPackage;
-import sag.org.eclipse.hc.dtmc.Line;
 import sag.org.eclipse.hc.dtmc.Reward;
 import sag.org.eclipse.hc.dtmc.State;
 import sag.org.eclipse.hc.dtmc.Transition;
@@ -67,13 +66,6 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 	 * @generated
 	 */
 	private EClass actionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass lineEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,17 +206,8 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDtmc_Lines() {
-		return (EReference) dtmcEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDtmc_Rewards() {
-		return (EReference) dtmcEClass.getEStructuralFeatures().get(4);
+		return (EReference) dtmcEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -277,6 +260,15 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTransition_To() {
+		return (EReference) transitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReward() {
 		return rewardEClass;
 	}
@@ -306,33 +298,6 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 	 */
 	public EAttribute getAction_Value() {
 		return (EAttribute) actionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLine() {
-		return lineEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLine_Source_state() {
-		return (EReference) lineEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLine_Target_state() {
-		return (EReference) lineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -390,7 +355,6 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 		createEAttribute(dtmcEClass, DTMC__VARIABLE);
 		createEReference(dtmcEClass, DTMC__STATES);
 		createEReference(dtmcEClass, DTMC__TRANSITIONS);
-		createEReference(dtmcEClass, DTMC__LINES);
 		createEReference(dtmcEClass, DTMC__REWARDS);
 
 		stateEClass = createEClass(STATE);
@@ -399,16 +363,13 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 
 		transitionEClass = createEClass(TRANSITION);
 		createEAttribute(transitionEClass, TRANSITION__PROBABILITY);
+		createEReference(transitionEClass, TRANSITION__TO);
 
 		rewardEClass = createEClass(REWARD);
 		createEReference(rewardEClass, REWARD__ACTIONS);
 
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__VALUE);
-
-		lineEClass = createEClass(LINE);
-		createEReference(lineEClass, LINE__SOURCE_STATE);
-		createEReference(lineEClass, LINE__TARGET_STATE);
 
 		moduleEClass = createEClass(MODULE);
 		createEReference(moduleEClass, MODULE__DTMC);
@@ -448,7 +409,6 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 		transitionEClass.getESuperTypes().add(this.getBase());
 		rewardEClass.getESuperTypes().add(this.getBase());
 		actionEClass.getESuperTypes().add(this.getBase());
-		lineEClass.getESuperTypes().add(this.getBase());
 		moduleEClass.getESuperTypes().add(this.getBase());
 
 		// Initialize classes, features, and operations; add parameters
@@ -467,9 +427,6 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 		initEReference(getDtmc_Transitions(), this.getTransition(), null, "transitions", null, 0, -1, Dtmc.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDtmc_Lines(), this.getLine(), null, "lines", null, 0, -1, Dtmc.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getDtmc_Rewards(), this.getReward(), null, "rewards", null, 0, -1, Dtmc.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -486,6 +443,9 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 		initEAttribute(getTransition_Probability(), ecorePackage.getEDouble(), "probability", null, 0, 1,
 				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_To(), this.getState(), null, "to", null, 0, 1, Transition.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(rewardEClass, Reward.class, "Reward", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReward_Actions(), this.getAction(), null, "actions", null, 0, -1, Reward.class, !IS_TRANSIENT,
@@ -495,14 +455,6 @@ public class DtmcPackageImpl extends EPackageImpl implements DtmcPackage {
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Action.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(lineEClass, Line.class, "Line", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLine_Source_state(), this.getState(), null, "source_state", null, 0, 1, Line.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLine_Target_state(), this.getState(), null, "target_state", null, 0, 1, Line.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(moduleEClass, sag.org.eclipse.hc.dtmc.Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

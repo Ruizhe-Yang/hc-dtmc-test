@@ -81,7 +81,6 @@ public class DtmcItemProvider extends BaseItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DtmcPackage.Literals.DTMC__STATES);
 			childrenFeatures.add(DtmcPackage.Literals.DTMC__TRANSITIONS);
-			childrenFeatures.add(DtmcPackage.Literals.DTMC__LINES);
 			childrenFeatures.add(DtmcPackage.Literals.DTMC__REWARDS);
 		}
 		return childrenFeatures;
@@ -151,7 +150,6 @@ public class DtmcItemProvider extends BaseItemProvider {
 			return;
 		case DtmcPackage.DTMC__STATES:
 		case DtmcPackage.DTMC__TRANSITIONS:
-		case DtmcPackage.DTMC__LINES:
 		case DtmcPackage.DTMC__REWARDS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -175,9 +173,6 @@ public class DtmcItemProvider extends BaseItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(DtmcPackage.Literals.DTMC__TRANSITIONS, DtmcFactory.eINSTANCE.createTransition()));
-
-		newChildDescriptors
-				.add(createChildParameter(DtmcPackage.Literals.DTMC__LINES, DtmcFactory.eINSTANCE.createLine()));
 
 		newChildDescriptors
 				.add(createChildParameter(DtmcPackage.Literals.DTMC__REWARDS, DtmcFactory.eINSTANCE.createReward()));

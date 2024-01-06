@@ -12,6 +12,7 @@ package sag.org.eclipse.hc.dtmc;
  * </p>
  * <ul>
  *   <li>{@link sag.org.eclipse.hc.dtmc.Transition#getProbability <em>Probability</em>}</li>
+ *   <li>{@link sag.org.eclipse.hc.dtmc.Transition#getTo <em>To</em>}</li>
  * </ul>
  *
  * @see sag.org.eclipse.hc.dtmc.DtmcPackage#getTransition()
@@ -40,5 +41,27 @@ public interface Transition extends Base {
 	 * @generated
 	 */
 	void setProbability(double value);
+
+	/**
+	 * Returns the value of the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>To</em>' reference.
+	 * @see #setTo(State)
+	 * @see sag.org.eclipse.hc.dtmc.DtmcPackage#getTransition_To()
+	 * @model
+	 * @generated
+	 */
+	State getTo();
+
+	/**
+	 * Sets the value of the '{@link sag.org.eclipse.hc.dtmc.Transition#getTo <em>To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To</em>' reference.
+	 * @see #getTo()
+	 * @generated
+	 */
+	void setTo(State value);
 
 } // Transition

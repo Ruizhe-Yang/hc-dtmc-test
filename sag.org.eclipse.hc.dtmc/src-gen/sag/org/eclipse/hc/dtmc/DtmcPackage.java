@@ -158,22 +158,13 @@ public interface DtmcPackage extends EPackage {
 	int DTMC__TRANSITIONS = BASE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Lines</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DTMC__LINES = BASE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Rewards</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DTMC__REWARDS = BASE_FEATURE_COUNT + 4;
+	int DTMC__REWARDS = BASE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Dtmc</em>' class.
@@ -182,7 +173,7 @@ public interface DtmcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTMC_FEATURE_COUNT = BASE_FEATURE_COUNT + 5;
+	int DTMC_FEATURE_COUNT = BASE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Dtmc</em>' class.
@@ -295,13 +286,22 @@ public interface DtmcPackage extends EPackage {
 	int TRANSITION__PROBABILITY = BASE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__TO = BASE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = BASE_FEATURE_COUNT + 1;
+	int TRANSITION_FEATURE_COUNT = BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -423,70 +423,6 @@ public interface DtmcPackage extends EPackage {
 	int ACTION_OPERATION_COUNT = BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link sag.org.eclipse.hc.dtmc.impl.LineImpl <em>Line</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sag.org.eclipse.hc.dtmc.impl.LineImpl
-	 * @see sag.org.eclipse.hc.dtmc.impl.DtmcPackageImpl#getLine()
-	 * @generated
-	 */
-	int LINE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINE__NAME = BASE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINE__ID = BASE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Source state</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINE__SOURCE_STATE = BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target state</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINE__TARGET_STATE = BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Line</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINE_FEATURE_COUNT = BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Line</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINE_OPERATION_COUNT = BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link sag.org.eclipse.hc.dtmc.impl.ModuleImpl <em>Module</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -494,7 +430,7 @@ public interface DtmcPackage extends EPackage {
 	 * @see sag.org.eclipse.hc.dtmc.impl.DtmcPackageImpl#getModule()
 	 * @generated
 	 */
-	int MODULE = 7;
+	int MODULE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -617,17 +553,6 @@ public interface DtmcPackage extends EPackage {
 	EReference getDtmc_Transitions();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link sag.org.eclipse.hc.dtmc.Dtmc#getLines <em>Lines</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lines</em>'.
-	 * @see sag.org.eclipse.hc.dtmc.Dtmc#getLines()
-	 * @see #getDtmc()
-	 * @generated
-	 */
-	EReference getDtmc_Lines();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link sag.org.eclipse.hc.dtmc.Dtmc#getRewards <em>Rewards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -692,6 +617,17 @@ public interface DtmcPackage extends EPackage {
 	EAttribute getTransition_Probability();
 
 	/**
+	 * Returns the meta object for the reference '{@link sag.org.eclipse.hc.dtmc.Transition#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To</em>'.
+	 * @see sag.org.eclipse.hc.dtmc.Transition#getTo()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_To();
+
+	/**
 	 * Returns the meta object for class '{@link sag.org.eclipse.hc.dtmc.Reward <em>Reward</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -732,38 +668,6 @@ public interface DtmcPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAction_Value();
-
-	/**
-	 * Returns the meta object for class '{@link sag.org.eclipse.hc.dtmc.Line <em>Line</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Line</em>'.
-	 * @see sag.org.eclipse.hc.dtmc.Line
-	 * @generated
-	 */
-	EClass getLine();
-
-	/**
-	 * Returns the meta object for the reference '{@link sag.org.eclipse.hc.dtmc.Line#getSource_state <em>Source state</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source state</em>'.
-	 * @see sag.org.eclipse.hc.dtmc.Line#getSource_state()
-	 * @see #getLine()
-	 * @generated
-	 */
-	EReference getLine_Source_state();
-
-	/**
-	 * Returns the meta object for the reference '{@link sag.org.eclipse.hc.dtmc.Line#getTarget_state <em>Target state</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target state</em>'.
-	 * @see sag.org.eclipse.hc.dtmc.Line#getTarget_state()
-	 * @see #getLine()
-	 * @generated
-	 */
-	EReference getLine_Target_state();
 
 	/**
 	 * Returns the meta object for class '{@link sag.org.eclipse.hc.dtmc.Module <em>Module</em>}'.
@@ -870,14 +774,6 @@ public interface DtmcPackage extends EPackage {
 		EReference DTMC__TRANSITIONS = eINSTANCE.getDtmc_Transitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Lines</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DTMC__LINES = eINSTANCE.getDtmc_Lines();
-
-		/**
 		 * The meta object literal for the '<em><b>Rewards</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -930,6 +826,14 @@ public interface DtmcPackage extends EPackage {
 		EAttribute TRANSITION__PROBABILITY = eINSTANCE.getTransition_Probability();
 
 		/**
+		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__TO = eINSTANCE.getTransition_To();
+
+		/**
 		 * The meta object literal for the '{@link sag.org.eclipse.hc.dtmc.impl.RewardImpl <em>Reward</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -964,32 +868,6 @@ public interface DtmcPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTION__VALUE = eINSTANCE.getAction_Value();
-
-		/**
-		 * The meta object literal for the '{@link sag.org.eclipse.hc.dtmc.impl.LineImpl <em>Line</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sag.org.eclipse.hc.dtmc.impl.LineImpl
-		 * @see sag.org.eclipse.hc.dtmc.impl.DtmcPackageImpl#getLine()
-		 * @generated
-		 */
-		EClass LINE = eINSTANCE.getLine();
-
-		/**
-		 * The meta object literal for the '<em><b>Source state</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LINE__SOURCE_STATE = eINSTANCE.getLine_Source_state();
-
-		/**
-		 * The meta object literal for the '<em><b>Target state</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LINE__TARGET_STATE = eINSTANCE.getLine_Target_state();
 
 		/**
 		 * The meta object literal for the '{@link sag.org.eclipse.hc.dtmc.impl.ModuleImpl <em>Module</em>}' class.
